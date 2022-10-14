@@ -19,7 +19,7 @@ class	Array
 			_n(0) {}
 		Array<T>(const unsigned int n):
 			_array(new T[n]),
-			_n(n) {}
+			_n(n) { for (int i = 0; i < _n; i++) _array[i] = 0; } 
 		Array<T>(const Array &src):
 			_n(src.getN()),
 			_array(new T[src.size()]) {

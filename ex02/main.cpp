@@ -5,9 +5,11 @@ int	main(void)
 	std::cout << std::endl;
 	std::cout << " *** Create an array of 5 integers *** " << std::endl;
 	Array<int>	i(5);
-	std::cout << "Setting all integers at 0..." << std::endl;
+	std::cout << " *** Accessing a value in the array before it was set *** " << std::endl;
+	std::cout << i[4] << std::endl;
+	std::cout << "Setting all integers at 1..." << std::endl;
 	for (int j = 0; j < 5; j++)
-		i.setElement(j, 0);
+		i.setElement(j, 1);
 	std::cout << "Checking the value of the last element: " << i[4] << std::endl;
 
 	std::cout << std::endl;
@@ -23,6 +25,7 @@ int	main(void)
 	std::cout << std::endl;
 	std::cout << " *** Create an array of 5 characters *** " << std::endl;
 	Array<char>	c(5);
+	std::cout << c[0] << std::endl;
 	std::cout << "Setting all characters at 'a'..." << std::endl;
 	for (int i = 0; i < 5; i++)
 		c.setElement(i, 'a');
