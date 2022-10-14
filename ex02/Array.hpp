@@ -17,7 +17,7 @@ class	Array
 		Array<T>():
 			_array(new T*),
 			_n(0) {}
-		Array<T>(unsigned int n):
+		Array<T>(const unsigned int n):
 			_array(new T[n]),
 			_n(n) {}
 		Array<T>(const Array &src):
@@ -35,13 +35,17 @@ class	Array
 			for (int i = 0; i < _n; i++) _array[i] = rhs.getElement(i);
 			return (*this);
 		}
-
-		unsigned int	size() const { return (_n); }
-		T				getElement(unsigned int i) const {
+		T			&operator[](const unsigned int i) {
 			if (i >= _n) throw (Array::OutOfBound());
 			return (_array[i]);
 		}
-		void			setElement(unsigned int i, T element) {
+
+		unsigned int	size() const { return (_n); }
+		T				getElement(const unsigned int i) const {
+			if (i >= _n) throw (Array::OutOfBound());
+			return (_array[i]);
+		}
+		void			setElement(const unsigned int i, const T element) {
 			if (i >= _n) throw (Array::OutOfBound());
 			_array[i] = element;
 		}
